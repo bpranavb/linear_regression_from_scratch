@@ -20,14 +20,14 @@ The project proceeds through the following structured phases:
 
 5.  **Comparative Visualization:** The project culminates in a clear visual comparison, presenting the noisy data, the true quadratic function, the inadequate simple linear fit, and the highly accurate polynomial regression fit. This visualization serves as compelling evidence of the impact of feature engineering.
 
-**Building Predictions Without Scikit-learn (Conceptual Extension):**
+**Underlying Mechanics: Building Predictions from Scratch**
 
-While this project utilizes Scikit-learn for convenience and clarity, the underlying mathematical principles of linear and polynomial regression can be implemented from scratch. This would involve:
+While this project primarily utilizes Scikit-learn for efficient implementation, it's important to understand the fundamental mathematical principles behind both the linear regression model and the polynomial feature transformation.
 
-* **For Linear Regression:** Implementing the normal equation (closed-form solution) or gradient descent to find the optimal coefficients ($$\beta$$ values) that minimize the Mean Squared Error.
-    * **Normal Equation:** $$\beta = (X^T X)^{-1} X^T y$$
-    * **Gradient Descent:** Iteratively updating $$\beta$$ by moving in the direction opposite to the gradient of the loss function.
+* **Linear Regression Model (from scratch):** The core linear regression model, which finds the best-fitting straight line, can be built without external libraries. This involves either:
+    * **Normal Equation:** A closed-form solution to directly calculate the optimal coefficients ($\beta$ values) that minimize the Mean Squared Error: $$\beta = (X^T X)^{-1} X^T y$$
+    * **Gradient Descent:** An iterative optimization algorithm that adjusts the coefficients by repeatedly moving in the direction opposite to the gradient of the loss function.
 
-* **For Polynomial Features:** Manually creating the polynomial terms (e.g., $$x^2, x^3$$) from the original input feature(s) before feeding them into the custom-built linear regression model. This involves explicit feature creation rather than relying on `PolynomialFeatures`.
+* **Polynomial Feature Engineering (from scratch):** The transformation of input features into their polynomial forms (e.g., from $$x$$ to $$x, x^2, x^3$$) can also be performed manually. This involves explicitly generating these higher-order terms from the original feature(s) before feeding them into a linear model (whether built from scratch or using a library). This manual process underscores how feature engineering fundamentally alters the input space to allow linear models to capture non-linear relationships.
 
 This project effectively demonstrates that while linear models are inherently simple, their predictive power can be dramatically enhanced by sophisticated feature engineering, allowing them to model complex non-linear relationships with high fidelity.
